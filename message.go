@@ -14,14 +14,26 @@ type (
 	// It also contain some helper functions to convert the fields to primitive types.
 	Message struct {
 		Name   string
-		Body   []byte
+		Body   interface{}
 		Fields Fields
 	}
 )
 
+func NewMessage(name string, body interface{}) *Message {
+	return &Message{
+		Name:   name,
+		Body:   body,
+		Fields: make(Fields),
+	}
+}
+
 // Topic return the message topic used when the message was sended.
 func (m *Message) Topic() string {
 	return m.Name
+}
+
+func (m *Message) String() string {
+	return fmt.Sprintf("%s(%+v) %s", m.Name, m.Body, m.Fields.String())
 }
 
 func (f Fields) String() string {

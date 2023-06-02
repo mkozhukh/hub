@@ -1,4 +1,4 @@
-module github.com/leandro-lugaresi/hub
+module github.com/mkozhukh/hub
 
 go 1.13
 

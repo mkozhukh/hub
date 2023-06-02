@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/leandro-lugaresi/hub"
+	"github.com/mkozhukh/hub"
 )
 
 func ExampleHub() {
